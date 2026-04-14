@@ -31,7 +31,7 @@
 java -jar target/integration-server-1.0.0.jar
 ```
 
-## 2. 为什么 `IntegrationServerApplication` 是启动类
+## 2. `IntegrationServerApplication` 启动类
 
 启动类位置：
 
@@ -52,9 +52,7 @@ public class IntegrationServerApplication {
 
 它之所以是启动类，是因为它同时满足下面几个条件：
 
-### 2.1 有 `main` 方法
-
-Java 程序的入口就是 `main` 方法。
+### 2.1 `main` 方法
 
 位置：
 
@@ -68,7 +66,7 @@ Java 程序的入口就是 `main` 方法。
 
 - `src/main/java/com/hw3/integration/IntegrationServerApplication.java:13`
 
-### 2.3 使用了 `@SpringBootApplication`
+### 2.3  `@SpringBootApplication`
 
 这个注解表示：
 
@@ -78,7 +76,7 @@ Java 程序的入口就是 `main` 方法。
 
 因为启动类所在包是 `com.hw3.integration`，所以 Spring 会默认扫描它下面所有子包中的组件。
 
-## 3. 它是如何启动 `controller`、`service` 等其它文件的
+## 3. 启动 `controller`、`service` 等其它文件
 
 可以按下面的顺序理解：
 
@@ -151,7 +149,7 @@ Spring 会根据构造器参数，把这些对象自动组装起来。
 
 - `src/main/java/com/hw3/integration/controller/IntegrationController.java:13`
 
-## 4. 配置文件是如何加载的
+## 4. 配置文件加载
 
 主配置文件位置：
 
