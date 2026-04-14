@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="integrationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="header">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="requestId" type="xs:string"/>
+                            <xs:element name="sourceSystem">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="A"/>
+                                        <xs:enumeration value="B"/>
+                                        <xs:enumeration value="C"/>
+                                        <xs:enumeration value="INTEGRATION"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="targetSystem" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="A"/>
+                                        <xs:enumeration value="B"/>
+                                        <xs:enumeration value="C"/>
+                                        <xs:enumeration value="ALL"/>
+                                        <xs:enumeration value="INTEGRATION"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="originSystem" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="A"/>
+                                        <xs:enumeration value="B"/>
+                                        <xs:enumeration value="C"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="action">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="COURSE_SHARE"/>
+                                        <xs:enumeration value="QUERY_SHARED_COURSES"/>
+                                        <xs:enumeration value="COURSE_SELECT"/>
+                                        <xs:enumeration value="COURSE_DROP"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="timestamp" type="xs:dateTime"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="body">
+                    <xs:complexType mixed="true">
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                            <xs:any processContents="skip"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+# Maven / Java build output
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Local Maven repository used by this workspace
+.m2/
+
+# Logs
+*.log
+logs/
+
+# IDE / editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Local reference materials not intended for version control
+基于XML数据集成的集成教务系统示例.pdf
+基于XML数据集成的集成教务系统示例.txt

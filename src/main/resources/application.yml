@@ -1,0 +1,24 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: integration-server
+
+integration:
+  departments:
+    A:
+      endpoint: http://localhost:8081/api/external/integration
+      studentSchema: classpath:schemas/local/studentA.xsd
+      classSchema: classpath:schemas/local/classA.xsd
+      choiceSchema: classpath:schemas/local/choiceA.xsd
+    B:
+      endpoint: http://localhost:8082/api/external/integration
+      studentSchema: classpath:schemas/local/studentB.xsd
+      classSchema: classpath:schemas/local/classB.xsd
+      choiceSchema: classpath:schemas/local/choiceB.xsd
+    C:
+      endpoint: http://localhost:8083/api/external/integration
+      studentSchema: classpath:schemas/local/studentC.xsd
+      classSchema: classpath:schemas/local/classC.xsd
+      choiceSchema: classpath:schemas/local/choiceC.xsd
