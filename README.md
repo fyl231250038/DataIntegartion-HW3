@@ -320,6 +320,3 @@ src
 6. 注册 `/api/integration/...` 路由
 7. 开始接收 XML 请求
 
-## 7. 一句话总结
-
-`IntegrationServerApplication` 的作用不是手动调用每个类，而是负责按下整个 Spring Boot 应用的启动开关；之后由 Spring 容器自动扫描、创建、注入并启动整个集成服务器。
