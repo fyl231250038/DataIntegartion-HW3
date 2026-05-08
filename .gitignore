@@ -30,6 +30,11 @@ Thumbs.db
 *.swp
 *.swo
 
+/PART2/backend/target
+/PART2/backend/.idea
+/PART2/frontend/node_modules
+/PART2/frontend/.idea
+
 # Local reference materials not intended for version control
 基于XML数据集成的集成教务系统示例.pdf
 基于XML数据集成的集成教务系统示例.txt

@@ -1,0 +1,262 @@
+spring:
+  profiles:
+    active: A
+
+server:
+  port: 8081
+
+department:
+  code: A
+  db:
+    quotePrefix: ""
+    quoteSuffix: ""
+    shareYesValue: "Y"
+    tables:
+      students: students
+      courses: courses
+      choices: choices
+      users: users
+    columns:
+      studentId: student_id
+      studentName: student_name
+      studentSex: student_sex
+      studentMajor: student_major
+      courseId: course_id
+      courseName: course_name
+      courseTime: course_time
+      courseScore: course_score
+      courseTeacher: course_teacher
+      courseLocation: course_location
+      courseShare: course_share
+      choiceStudentId: student_id
+      choiceCourseId: course_id
+      choiceScore: score
+      userName: username
+      userPassword: password
+  xml:
+    student:
+      rootName: Students
+      itemName: student
+      idTag: Sno
+      nameTag: Snm
+      sexTag: Sex
+      majorTag: Sde
+    course:
+      rootName: Classes
+      itemName: class
+      idTag: Cno
+      nameTag: Cnm
+      timeTag: Ctm
+      scoreTag: Cpt
+      teacherTag: Tec
+      locationTag: Pla
+      shareTag: Share
+    choice:
+      rootName: Choices
+      itemName: choice
+      studentIdTag: Sno
+      courseIdTag: Cno
+      scoreTag: Grd
+
+integration:
+  serverBaseUrl: http://localhost:8090
+  requestPath: /api/integration/requests
+
+jwt:
+  secret: "change-me-please-change-me-please-2024"
+  expirationMinutes: 120
+
+---
+spring:
+  config:
+    activate:
+      on-profile: A
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=dept_a;encrypt=false
+    username: sa
+    password: change_me
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+server:
+  port: 8081
+department:
+  code: A
+  db:
+    quotePrefix: "["
+    quoteSuffix: "]"
+    shareYesValue: "Y"
+    tables:
+      students: Students
+      courses: Classes
+      choices: Choices
+      users: Users
+    columns:
+      studentId: 学号
+      studentName: 姓名
+      studentSex: 性别
+      studentMajor: 院系
+      courseId: 课程编号
+      courseName: 课程名称
+      courseTime: 课时
+      courseScore: 学分
+      courseTeacher: 授课老师
+      courseLocation: 授课地点
+      courseShare: 共享
+      choiceStudentId: 学生编号
+      choiceCourseId: 课程编号
+      choiceScore: 成绩
+      userName: 用户名
+      userPassword: 密码
+  xml:
+    student:
+      rootName: Students
+      itemName: student
+      idTag: 学号
+      nameTag: 姓名
+      sexTag: 性别
+      majorTag: 院系
+    course:
+      rootName: Classes
+      itemName: class
+      idTag: 课程编号
+      nameTag: 课程名称
+      timeTag: 课时
+      scoreTag: 学分
+      teacherTag: 授课老师
+      locationTag: 授课地点
+      shareTag: 共享
+    choice:
+      rootName: Choices
+      itemName: choice
+      studentIdTag: 学生编号
+      courseIdTag: 课程编号
+      scoreTag: 成绩
+
+---
+spring:
+  config:
+    activate:
+      on-profile: B
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/ORCLPDB1
+    username: dept_b
+    password: change_me
+    driver-class-name: oracle.jdbc.OracleDriver
+server:
+  port: 8082
+department:
+  code: B
+  db:
+    quotePrefix: "\""
+    quoteSuffix: "\""
+    shareYesValue: "Y"
+    tables:
+      students: Students
+      courses: Classes
+      choices: Choices
+      users: Users
+    columns:
+      studentId: 学号
+      studentName: 姓名
+      studentSex: 性别
+      studentMajor: 专业
+      courseId: 编号
+      courseName: 名称
+      courseTime: 课时
+      courseScore: 学分
+      courseTeacher: 老师
+      courseLocation: 地点
+      courseShare: 共享
+      choiceStudentId: 学号
+      choiceCourseId: 课程编号
+      choiceScore: 得分
+      userName: 用户名
+      userPassword: 密码
+  xml:
+    student:
+      rootName: Students
+      itemName: student
+      idTag: 学号
+      nameTag: 姓名
+      sexTag: 性别
+      majorTag: 专业
+    course:
+      rootName: Classes
+      itemName: class
+      idTag: 编号
+      nameTag: 名称
+      timeTag: 课时
+      scoreTag: 学分
+      teacherTag: 老师
+      locationTag: 地点
+      shareTag: 共享
+    choice:
+      rootName: Choices
+      itemName: choice
+      studentIdTag: 学号
+      courseIdTag: 课程编号
+      scoreTag: 得分
+
+---
+spring:
+  config:
+    activate:
+      on-profile: C
+  datasource:
+    url: jdbc:mysql://localhost:3306/dept_c?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 8083
+department:
+  code: C
+  db:
+    quotePrefix: "`"
+    quoteSuffix: "`"
+    shareYesValue: "Y"
+    tables:
+      students: Students
+      courses: Classes
+      choices: Choices
+      users: Users
+    columns:
+      studentId: Sno
+      studentName: Snm
+      studentSex: Sex
+      studentMajor: Sde
+      courseId: Cno
+      courseName: Cnm
+      courseTime: Ctm
+      courseScore: Cpt
+      courseTeacher: Tec
+      courseLocation: Pla
+      courseShare: Share
+      choiceStudentId: Sno
+      choiceCourseId: Cno
+      choiceScore: Grd
+      userName: username
+      userPassword: password
+  xml:
+    student:
+      rootName: Students
+      itemName: student
+      idTag: Sno
+      nameTag: Snm
+      sexTag: Sex
+      majorTag: Sde
+    course:
+      rootName: Classes
+      itemName: class
+      idTag: Cno
+      nameTag: Cnm
+      timeTag: Ctm
+      scoreTag: Cpt
+      teacherTag: Tec
+      locationTag: Pla
+      shareTag: Share
+    choice:
+      rootName: Choices
+      itemName: choice
+      studentIdTag: Sno
+      courseIdTag: Cno
+      scoreTag: Grd
