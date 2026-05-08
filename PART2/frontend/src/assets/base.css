@@ -1,0 +1,17 @@
+:root {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f6;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a.router-link-active {
+  font-weight: 600;
+}
